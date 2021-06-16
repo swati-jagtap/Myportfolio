@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <style>
+        *{
+            padding:0px;
+            margin:0px auto;
+           
+        }
+        body{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding:50px 10%;
+        }
+        .name{
+            text-transform: capitalize;
+            font-size: 45px;
+            letter-spacing: 10px;
+            font-weight: 700;
+            color: rgb(82, 80, 80);
+        }
+        .title{
+            background: rgb(206, 176, 181,0.7);
+            margin: 30px 0px;
+            padding: 25px 15px;
+            font-size: 20px;
+            text-transform: capitalize;
+           
+        }
+       
+        .intro{
+            text-align: justify;
+        }
+        .projects{
+            display:flex;
+            padding:5%;
+            justify-content: space-evenly;
+            
+        }
+        .project_item{
+            box-shadow:1px 1px 10px rgb(152, 158, 160) ;
+            display:flex;
+            height:150px;
+            max-width: 20%;
+            padding:0px 10px;
+            min-width: 20%;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            
+        }
+        .project_item:hover{
+            background: rgba(231, 161, 161, 0.822);
+            height:170px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            max-width: 21%;            
+            min-width: 21%;
+        }
+        .techColor{
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+       
+        @media screen and (max-width: 700px) {           
+           .project_item{
+            box-shadow:1px 1px 10px rgb(152, 158, 160) ;
+           
+            height:150px;
+            max-width: 25%;
+            padding:0px 10px;
+            min-width: 25%;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 10px;            
+           }
+           .project_item:hover{            
+            height:160px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            max-width: 26%;            
+            min-width: 26%;
+           }
+        }
+        @media screen and (max-width: 550px) {
+            .name{            
+            font-size: 35px;
+            letter-spacing: 7px;
+            line-height: 50px;
+           }
+           .projects{
+            
+            flex-wrap: wrap;
+            padding:5%;
+            justify-content: space-evenly;            
+           }
+           .project_item{
+            
+            flex-wrap: wrap;
+            height:150px;
+            max-width: 80%;
+            padding:0px 10px;
+            min-width: 80%;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 10px;            
+           }
+           .techColor{
+            font-size: 25px;
+            font-weight: 700;
+           }
+
+        }
+    </style>
+
+
+</head>
+<body>
+    <header class="name">swati jagtap</header>
+    <maquee direction="right" width="100%" behavior="scroll" scrollamount='9'><section class="title">author</section></maquee>   
+    
+    <section class="intro">I am Swati Jagtap. I am learner, developer, compititive programmer and react developer.
+        I love learning and developing new things. In have developed <b>Solar System, Data Visualization, Countries Count,Color Changer</b> 
+        etc. projects using <b>HTML, CSS, Javascript</b>
+    </section>
+    <section class = "projects">
+        <div class="project_item">
+             <h3>Solar System</h3>
+        </div>
+        <div class="project_item">
+            <h3>Countries Count</h3>
+        </div>
+        <div class="project_item">
+            <h3>Data Visualization</h3>
+        </div>
+
+    </section>
+    <section class="tech">The technologies I know <span class="techColor"></span> </section>
+    
+
+    <script>
+        
+       const titleArray =  [['🌱 Learner'], ['🌐 Developer'],['💻 Programmer'],['🔥 React Developer']];
+       const tech = ['HTML','Javascript','CSS','React'];
+       const color=["red","blue","green","orange","yellow","indigo","crimson","brown"];
+       const title=document.querySelector('.title');
+       const techColor = document.querySelector('.techColor');
+       let i=0;
+       let j=0;
+       setInterval(function(){
+         const n= Math.round(Math.random()*(color.length-1));
+         //console.log(n)
+         techColor.style.color = color[n];
+         techColor.textContent = tech[i];
+         i++;
+         if(i==tech.length)
+         {
+             i=0;
+         }
+         title.textContent = titleArray[j]
+         j++;
+         if(j==titleArray.length){
+             j=0;
+         }
+       },1000);
+    </script>
+
+</body>
+</html>
